@@ -1,7 +1,7 @@
+import { Button, WrapItem } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/operations';
-import { ContactEl } from './Contacts.styled';
+import { deleteContact } from 'redux/contacts/operations';
 
 export const Contact = ({ contact }) => {
   const { id, name, number } = contact;
@@ -9,14 +9,25 @@ export const Contact = ({ contact }) => {
   const handleClick = () => dispatch(deleteContact(id));
 
   return (
-    <ContactEl key={id}>
+    <WrapItem
+      key={id}
+      justifyContent="space-between"
+      alignItems="center"
+      gap={2}
+    >
       <p>
         {name}: {number}
       </p>
-      <button type="button" onClick={handleClick}>
+      <Button
+        type="button"
+        onClick={handleClick}
+        borderRadius="5px"
+        colorScheme="red"
+        size="xs"
+      >
         Delete
-      </button>
-    </ContactEl>
+      </Button>
+    </WrapItem>
   );
 };
 

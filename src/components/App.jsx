@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
-import { Login } from './pages/Login/Login';
-import { Register } from './pages/Register/Register';
+import { Login } from '../pages/Login';
+import { Register } from '../pages/Register';
 import { Layout } from './Layout';
 import { useAuth } from 'hooks/useAuth';
-import { Contacts } from './pages/Contacts/Contacts';
+import { Contacts } from '../pages/Contacts';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 

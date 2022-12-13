@@ -1,16 +1,16 @@
+import { Wrap } from '@chakra-ui/react';
 import { useSelector } from 'react-redux/es/exports';
-import { selectVisibleContacts } from 'redux/selectors';
+import { selectVisibleContacts } from 'redux/contacts/selectors';
 import { Contact } from './Contact';
-import { ContactsEl } from './Contacts.styled';
 
 export const ContactsList = () => {
   const contacts = useSelector(selectVisibleContacts);
 
   return (
-    <ContactsEl>
+    <Wrap direction="column" gap={4}>
       {contacts.map(contact => {
         return <Contact contact={contact} key={contact.id} />;
       })}
-    </ContactsEl>
+    </Wrap>
   );
 };
