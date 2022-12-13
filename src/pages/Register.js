@@ -58,16 +58,6 @@ export const Register = () => {
     }
     return error;
   };
-  const validatePhone = value => {
-    let error;
-    const phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    if (!value) {
-      error = 'Phone is required';
-    } else if (!value.match(phoneno)) {
-      error = 'Invalid phone number';
-    }
-    return error;
-  };
   const validateName = value => {
     let error;
     if (!name) {
